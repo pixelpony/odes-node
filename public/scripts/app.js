@@ -5,7 +5,6 @@ define(['jquery'], function ($) {
 
     return {
         connect: function (div1, div2, color, thickness) {
-            //console.log("DRAWING");
 
             thickness = thickness || '1'
 
