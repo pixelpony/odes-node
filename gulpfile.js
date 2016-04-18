@@ -8,22 +8,29 @@ var gutil = require('gulp-util');
 var log = gutil.log;
 var colors = gutil.colors;
 
+var appPath = "./app";
+var stylesPath = appPath + "/styles/**/*.scss";
+var fontsPath = appPath + "/styles/fonts/**/*.*";
+
 var outPath = "./dist";
+var stylesOutPath = outPath + "/css";
+var fontsOutPath = outPath + "/css/fonts";
+
 var bootstrapPath = "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 gulp.task('styles', function () {
     log(colors.blue('Copying fonts'));
-    return gulp.src('./styles/**/*.scss')
-        .pipe(sass({ includePaths : [bootstrapPath] }).on('error', sass.logError))
-        .pipe(gulp.dest(outPath+'/css'));
+    return gulp.src(stylesPath)
+        .pipe(sass({ includePaths: [bootstrapPath] }).on('error', sass.logError))
+        .pipe(gulp.dest(stylesOutPath));
 });
 
 gulp.task('fonts', function() {
     log(colors.blue('Copying fonts'));
 
-    var fonts = gulp.src('styles/fonts/**/*.*')
+    var fonts = gulp.src(fontsPath)
         .pipe(changed('styles/fonts'))
-        .pipe(gulp.dest(outPath+'/css/fonts'));
+        .pipe(gulp.dest(fontsOutPath));
 
     return fonts;
 });

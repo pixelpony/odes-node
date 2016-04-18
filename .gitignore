@@ -1,3 +1,5 @@
 node_modules
 ecosystem.json
+bower_components
+dist
 
