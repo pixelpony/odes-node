@@ -8,13 +8,13 @@ $month-height-768: 11px;
 $month-height-825: 12px;
 $month-height-992: 13px;
 /*
-    @media (min-width: 768px) {  
+    @media (min-width: 768px) {
     }
 
-    @media (min-width: 825px) { 
+    @media (min-width: 825px) {
     }
 
-    @media (min-width: 992px) { 
+    @media (min-width: 992px) {
     }
 */
 
@@ -86,7 +86,7 @@ html {
     @media (min-width: 825px) {
         font-size: 16px;
     }
-    @media (min-width: 992px) { 
+    @media (min-width: 992px) {
         font-size: 18px;
     }
     @media print {
@@ -98,13 +98,13 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'charter-regular';
-    background: white url(../images/sneaker_mesh_fabric.png) top left;
+    background: white url(./images/sneaker_mesh_fabric.png) top left;
     font-size: 1rem;
     line-height: 1.3em;
     color: #000;
 
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-        background-image: url(../images/sneaker_mesh_fabric_@2X.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(./images/sneaker_mesh_fabric_@2X.png);
         background-size: 150px 111px;
     }
 
@@ -159,7 +159,7 @@ p {
         background-color: rgba(255,255,255,.65);
     }
 
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         padding: 2rem;
         width: 45rem;
     }
@@ -216,7 +216,7 @@ header {
         margin: 0 auto;
     }
 
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         width: auto;
         margin-left: 5.5rem;
         padding: 0 1rem 0 1.25em;
@@ -255,7 +255,7 @@ header {
 .career-history {
     margin-bottom: 1rem;
     @media (min-width : 321px) { }
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         box-sizing: border-box;
         margin: 0 auto;
     }
@@ -325,7 +325,7 @@ ul.year-map {
         }
     }
 
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         li {
             height: $month-height-650 * 12;
         }
@@ -336,7 +336,7 @@ ul.year-map {
             height: $month-height-650 * 8;
         }
     }
-    @media (min-width: 768px) {  
+    @media (min-width: 768px) {
         li {
             height: $month-height-768 * 12;
         }
@@ -348,7 +348,7 @@ ul.year-map {
         }
     }
 
-    @media (min-width: 825px) { 
+    @media (min-width: 825px) {
         li {
             height: $month-height-825 * 12;
         }
@@ -360,7 +360,7 @@ ul.year-map {
         }
     }
 
-    @media (min-width: 992px) { 
+    @media (min-width: 992px) {
         li {
             height: $month-height-992 * 12;
         }
@@ -422,7 +422,7 @@ ul.era-map {
         display: block;
 
     }
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         li.opensky-era {
             height: $month-height-650 * 42;
         }
@@ -442,7 +442,7 @@ ul.era-map {
             height: $month-height-650 * 22;
         }
     }
-    @media (min-width: 768px) {  
+    @media (min-width: 768px) {
         li.opensky-era {
             height: $month-height-768 * 42;
         }
@@ -463,7 +463,7 @@ ul.era-map {
         }
     }
 
-    @media (min-width: 825px) { 
+    @media (min-width: 825px) {
         li.opensky-era {
             height: $month-height-825 * 42;
         }
@@ -484,7 +484,7 @@ ul.era-map {
         }
     }
 
-    @media (min-width: 992px) { 
+    @media (min-width: 992px) {
         li.opensky-era {
             height: $month-height-992 * 42;
         }
@@ -514,7 +514,7 @@ ul.era-map {
         margin-left: 70px;
     }
 
-    @media (min-width: 650px) {  
+    @media (min-width: 650px) {
         margin-left: 5.5rem;
     }
 
@@ -561,7 +561,7 @@ ul.era-map {
 
         li.label {
             display: inline;
-            padding: .2rem .4rem ; 
+            padding: .2rem .4rem ;
             color: white;
             text-align: center;
             white-space: nowrap;
@@ -614,12 +614,12 @@ ul.era-map {
             font-size: .8rem;
             line-height: 1rem;
 
-            @media (min-width: 650px) {  
+            @media (min-width: 650px) {
                 column-count: 2;
                 column-gap: 2rem;
                 column-rule: 1px dotted #aaa;
             }
-            @media print {  
+            @media print {
                 column-count: 2 !important;
                 column-gap: 2rem !important;
                 column-rule: 1px dotted #aaa !important;
