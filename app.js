@@ -18,6 +18,7 @@ app.configure(function(){
     //app.use(express.static(__dirname + '/public'));
     app.use(express.static(__dirname + '/static'));
     app.use('/css', express.static(__dirname + '/css'));
+    app.use('/scripts', express.static(__dirname + '/scripts'));
 });
 
 app.configure('development', function(){

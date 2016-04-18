@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var changed = require('gulp-changed');
 var es = require('event-stream');
+var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 var gutil = require('gulp-util');
@@ -31,7 +32,7 @@ var bowerRoot = "./bower_components";
 var browserScripts = [
     (bowerRoot + '/jquery/dist/jquery.js'),
     (bowerRoot + '/lodash/dist/lodash.js'),
-    (scriptsPath + '/timeline.js')
+    (appRoot + '/scripts/timeline.js')
 ];
 
 gulp.task('scripts', function() {
@@ -41,7 +42,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(outPath));
 
 
-    var scripts = gulp.src(appPath)
+    // var scripts = gulp.src(appPath)
         // .pipe(named())
         // .pipe(webpack(require('./webpack.config.js')))
         //     .on('error', onError)
@@ -50,16 +51,18 @@ gulp.task('scripts', function() {
         //     output: {ascii_only: true}
         // })))
         //
-        .pipe(gulp.dest(outPath + '/scripts'));
+        // .pipe(gulp.dest(outPath + '/scripts'));
 
-    return es.merge(appEntry, scripts);
+    // return es.merge(appEntry, scripts);
+    return appEntry;
 });
 
 gulp.task('browserScripts', function() {
     log(colors.blue('Concatenating browser scripts'));
     return gulp.src(browserScripts)
-      .pipe(concat('all.js'))
-      .pipe(gulp.dest(browserScriptsOutPath));
+        .pipe(concat('all.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(browserScriptsOutPath));
 
 });
 
@@ -74,7 +77,7 @@ gulp.task('fonts', function() {
     log(colors.blue('Copying fonts'));
 
     var fonts = gulp.src(fontsPath)
-        .pipe(changed('styles/fonts'))
+        // .pipe(changed('styles/fonts'))
         .pipe(gulp.dest(fontsOutPath));
 
     return fonts;
@@ -106,7 +109,7 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(fontsPath,  ['fonts']);
     gulp.watch(imgsPath,  ['images']);
     gulp.watch(appEntryPath,  ['scripts']);
-    gulp.watch(appPath,  ['scripts']);
+    gulp.watch(scriptsPath,  ['browserScripts']);
     gulp.watch(staticPath,  ['static']);
 
     // gulp.watch('yarn/assets/{img,images}/**/*.*',    ['images']);
